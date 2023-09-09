@@ -3,6 +3,8 @@ name: Simple Demo
 on:
   pull_request:
     types: [opened, edited]
+  workflow_dispatch:
+  push:
 
 jobs:
     deploy:
