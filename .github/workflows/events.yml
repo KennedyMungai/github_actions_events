@@ -1,6 +1,8 @@
 name: Simple Demo
 
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types: [opened, edited]
 
 jobs:
     deploy:
