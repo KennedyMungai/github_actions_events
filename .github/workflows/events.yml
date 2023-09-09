@@ -1,6 +1,6 @@
 name: Simple Demo
 
-on: push
+on: [push, workflow_dispatch]
 
 jobs:
     deploy:
