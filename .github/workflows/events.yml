@@ -2,10 +2,13 @@ name: Simple Demo
 
 on:
   pull_request:
-    types: [opened, edited]
+    types:
+      - opened
   workflow_dispatch:
   push:
-
+    branches:
+      - main
+      - dev
 jobs:
     deploy:
         runs-on: ubuntu-latest
