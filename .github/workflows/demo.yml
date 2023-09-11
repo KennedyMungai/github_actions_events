@@ -18,6 +18,8 @@ jobs:
     build:
         needs: test
         runs-on: ubuntu-latest
+        outputs: 
+            script-file:
         steps:
             - name: Get Code
               uses: actions/checkout@v4
@@ -25,6 +27,8 @@ jobs:
               run: npm ci
             - name: Build Website
               run: npm run build
+            - name: Publish JS filename
+              run: find .next/server/app/page.js -type f -execdir echo '::set-output {}' ';'
             - name: Upload Artifacts
               uses: actions/upload-artifact@v3
               with:
