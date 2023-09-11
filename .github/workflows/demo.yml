@@ -28,7 +28,7 @@ jobs:
             - name: Build Website
               run: npm run build
             - name: Publish JS filename
-              run: find .next/server/app/page.js -type f -execdir echo '::set-output {}' ';'
+              run: find .next/server/app/page.js -type f -execdir echo '::set-output name=script-file::{}' ';'
             - name: Upload Artifacts
               uses: actions/upload-artifact@v3
               with:
